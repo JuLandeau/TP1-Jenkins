@@ -32,6 +32,9 @@ pmd {
     ,"java-strings"
     ,"java-unusedcode"]
 }
+findbugs {
+    ignoreFailures = false
+}
 checkstyle {
 	ignoreFailures = true
     configFile file("config/checkstyle/checkstyle.xml")
