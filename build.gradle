@@ -2,6 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'pmd'
+apply plugin: 'findbugs'
 repositories {
 	jcenter()
 	mavenCentral()
@@ -34,4 +35,10 @@ tasks.withType(Pmd) {
 		xml.enabled true
 		html.enabled true
 	}
+}
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
 }
