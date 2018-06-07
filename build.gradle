@@ -3,6 +3,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'pmd'
 apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+
 repositories {
 	jcenter()
 	mavenCentral()
@@ -30,6 +32,16 @@ pmd {
     ,"java-strings"
     ,"java-unusedcode"]
 }
+checkstyle {
+	ignoreFailures = true
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+checkstyleMain {
+    source ='src/main/java'
+}
+checkstyleTest {
+    source ='src/test/java'
+}
 tasks.withType(Pmd) {
 	reports {
 		xml.enabled true
@@ -37,6 +49,12 @@ tasks.withType(Pmd) {
 	}
 }
 tasks.withType(FindBugs) {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+tasks.withType(Checkstyle) {
     reports {
         xml.enabled true
         html.enabled false
