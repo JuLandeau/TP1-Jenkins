@@ -33,7 +33,7 @@ pmd {
     ,"java-unusedcode"]
 }
 findbugs {
-    ignoreFailures = false
+    ignoreFailures = true
 }
 checkstyle {
 	ignoreFailures = true
