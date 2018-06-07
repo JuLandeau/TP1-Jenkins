@@ -9,14 +9,19 @@ import org.joda.time.DateTime;
  * My main Application
  * @author Julien
  */
-public class Application {
+public final class Application {
+	
+	private Application() {
+		
+	}
 	/**
 	 * Enter point application.
 	 * @param args Argument from CLI.
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		System.out.println("Hello world");
-		DateTime date = DateTime.now();
+		final DateTime date = DateTime.now();
+		System.out.println(date);
 	}
 	
 	/**
@@ -26,9 +31,8 @@ public class Application {
 	 * @param j second value.
 	 * @return result of the addition.
 	 */
-	public static int add(int i, int j)
-	{
-		return i + j;
+	public static int add(final int value1, final int value2) {
+		return value1 + value2;
 	}
 	
 }
